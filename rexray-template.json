@@ -151,10 +151,16 @@
              "yum update -y aws-cfn-bootstrap\n",
 
              "# Install the latest Docker..\n",
-             "/usr/bin/wget -qO- https://get.docker.com/ | sh",
+             "/usr/bin/curl https://get.docker.com/ > /tmp/install_docker.sh\n",
+             "chmod +x /tmp/install_docker.sh\n",
+             "/tmp/install_docker.sh\n",
 
-             "# Install REX-ray",
-             "/usr/bin/curl -sSL https://dl.bintray.com/emccode/rexray/install | sh -"
+             "# Install REX-ray\n",
+             "/usr/bin/curl https://raw.githubusercontent.com/emccode/rexray/master/install.sh > /tmp/install_rexray_temp.sh\n",
+             "cat /tmp/install_rexray_temp.sh | sed -e 's/sudo//g' > /tmp/install_rexray.sh\n",
+             "chmod +x /tmp/install_rexray.sh\n",
+             "/tmp/install_rexray.sh\n",
+             "reboot\n"
         ]]}}        
       },
       "CreationPolicy" : {
