@@ -167,24 +167,19 @@
              "yum update -y aws-cfn-bootstrap\n",
 
              "# Install the latest Docker..\n",
-             "/usr/bin/curl https://get.docker.com/ > /tmp/install_docker.sh\n",
-             "chmod +x /tmp/install_docker.sh\n",
-             "/tmp/install_docker.sh\n",
+             "/usr/bin/curl -o /tmp/install-docker.sh https://get.docker.com/\n",
+             "chmod +x /tmp/install-docker.sh\n",
+             "/tmp/install-docker.sh\n",
 
              "# add the ec2-user user to the docker group..\n",
              "/usr/sbin/usermod -G docker ec2-user\n",
 
              "# Install REX-ray\n",
-             "/usr/bin/curl https://raw.githubusercontent.com/emccode/rexray/master/install.sh > /tmp/install_rexray.sh\n",
-             "chmod +x /tmp/install_rexray.sh\n",
-             "/tmp/install_rexray.sh\n",
+             "/usr/bin/curl -ssL -o /tmp/install-rexray.sh https://dl.bintray.com/emccode/rexray/install\n",
+             "chmod +x /tmp/install-rexray.sh\n",
+             "/tmp/install-rexray.sh\n",
              "reboot\n"
         ]]}}        
-      },
-      "CreationPolicy" : {
-        "ResourceSignal" : {
-          "Timeout" : "PT5M"
-        }
       }
     },
 
