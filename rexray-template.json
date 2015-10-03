@@ -204,9 +204,19 @@
         "Path" : "/",
         "LoginProfile" : {
          "Password" : "f00b4r"
-        }
+        },
+        "Policies" : [ {
+         "PolicyName" : "giveaccesstoall",
+         "PolicyDocument" : {
+            "Version": "2012-10-17",
+            "Statement" : [ {
+               "Effect" : "Allow",
+               "Action" : [ "ec2:*" ]
+            }
+         ] }
+       } ]
       }
-    }, 
+    },
     
     "RexrayAccessKey" : {
       "Type" : "AWS::IAM::AccessKey",
