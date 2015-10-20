@@ -26,8 +26,8 @@
     "InstanceType" : {
       "Description" : "EC2 instance type",
       "Type" : "String",
-      "Default" : "m1.small",
-      "AllowedValues" : [ "t1.micro", "t2.micro", "t2.small", "t2.medium", "m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge", "c1.medium", "c1.xlarge", "c3.large", "c3.xlarge", "c3.2xlarge", "c3.4xlarge", "c3.8xlarge", "c4.large", "c4.xlarge", "c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "g2.2xlarge", "r3.large", "r3.xlarge", "r3.2xlarge", "r3.4xlarge", "r3.8xlarge", "i2.xlarge", "i2.2xlarge", "i2.4xlarge", "i2.8xlarge", "d2.xlarge", "d2.2xlarge", "d2.4xlarge", "d2.8xlarge", "hi1.4xlarge", "hs1.8xlarge", "cr1.8xlarge", "cc2.8xlarge", "cg1.4xlarge"]
+      "Default" : "m1.large",
+      "AllowedValues" : [ "t1.micro", "m1.small", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge","c1.medium", "c1.xlarge"]
 ,
       "ConstraintDescription" : "must be a valid EC2 instance type."
     },
@@ -45,68 +45,29 @@
   
   "Mappings" : {
     "AWSInstanceType2Arch" : {
-      "t1.micro"    : { "Arch" : "PV64"   },
-      "t2.micro"    : { "Arch" : "HVM64"  },
-      "t2.small"    : { "Arch" : "HVM64"  },
-      "t2.medium"   : { "Arch" : "HVM64"  },
-      "m1.small"    : { "Arch" : "PV64"   },
-      "m1.medium"   : { "Arch" : "PV64"   },
-      "m1.large"    : { "Arch" : "PV64"   },
-      "m1.xlarge"   : { "Arch" : "PV64"   },
-      "m2.xlarge"   : { "Arch" : "PV64"   },
-      "m2.2xlarge"  : { "Arch" : "PV64"   },
-      "m2.4xlarge"  : { "Arch" : "PV64"   },
-      "m3.medium"   : { "Arch" : "HVM64"  },
-      "m3.large"    : { "Arch" : "HVM64"  },
-      "m3.xlarge"   : { "Arch" : "HVM64"  },
-      "m3.2xlarge"  : { "Arch" : "HVM64"  },
-      "c1.medium"   : { "Arch" : "PV64"   },
-      "c1.xlarge"   : { "Arch" : "PV64"   },
-      "c3.large"    : { "Arch" : "HVM64"  },
-      "c3.xlarge"   : { "Arch" : "HVM64"  },
-      "c3.2xlarge"  : { "Arch" : "HVM64"  },
-      "c3.4xlarge"  : { "Arch" : "HVM64"  },
-      "c3.8xlarge"  : { "Arch" : "HVM64"  },
-      "c4.large"    : { "Arch" : "HVM64"  },
-      "c4.xlarge"   : { "Arch" : "HVM64"  },
-      "c4.2xlarge"  : { "Arch" : "HVM64"  },
-      "c4.4xlarge"  : { "Arch" : "HVM64"  },
-      "c4.8xlarge"  : { "Arch" : "HVM64"  },
-      "g2.2xlarge"  : { "Arch" : "HVMG2"  },
-      "r3.large"    : { "Arch" : "HVM64"  },
-      "r3.xlarge"   : { "Arch" : "HVM64"  },
-      "r3.2xlarge"  : { "Arch" : "HVM64"  },
-      "r3.4xlarge"  : { "Arch" : "HVM64"  },
-      "r3.8xlarge"  : { "Arch" : "HVM64"  },
-      "i2.xlarge"   : { "Arch" : "HVM64"  },
-      "i2.2xlarge"  : { "Arch" : "HVM64"  },
-      "i2.4xlarge"  : { "Arch" : "HVM64"  },
-      "i2.8xlarge"  : { "Arch" : "HVM64"  },
-      "d2.xlarge"   : { "Arch" : "HVM64"  },
-      "d2.2xlarge"  : { "Arch" : "HVM64"  },
-      "d2.4xlarge"  : { "Arch" : "HVM64"  },
-      "d2.8xlarge"  : { "Arch" : "HVM64"  },
-      "hi1.4xlarge" : { "Arch" : "HVM64"  },
-      "hs1.8xlarge" : { "Arch" : "HVM64"  },
-      "cr1.8xlarge" : { "Arch" : "HVM64"  },
-      "cc2.8xlarge" : { "Arch" : "HVM64"  }
-    }
-,
-    "AWSRegionArch2AMI" : {
-      "us-east-1"        : {"PV64" : "ami-0f4cfd64", "HVM64" : "ami-0d4cfd66", "HVMG2" : "ami-5b05ba30"},
-      "us-west-2"        : {"PV64" : "ami-d3c5d1e3", "HVM64" : "ami-d5c5d1e5", "HVMG2" : "ami-a9d6c099"},
-      "us-west-1"        : {"PV64" : "ami-85ea13c1", "HVM64" : "ami-87ea13c3", "HVMG2" : "ami-37827a73"},
-      "eu-west-1"        : {"PV64" : "ami-d6d18ea1", "HVM64" : "ami-e4d18e93", "HVMG2" : "ami-72a9f105"},
-      "eu-central-1"     : {"PV64" : "ami-a4b0b7b9", "HVM64" : "ami-a6b0b7bb", "HVMG2" : "ami-a6c9cfbb"},
-      "ap-northeast-1"   : {"PV64" : "ami-1a1b9f1a", "HVM64" : "ami-1c1b9f1c", "HVMG2" : "ami-f644c4f6"},
-      "ap-southeast-1"   : {"PV64" : "ami-d24b4280", "HVM64" : "ami-d44b4286", "HVMG2" : "ami-12b5bc40"},
-      "ap-southeast-2"   : {"PV64" : "ami-ef7b39d5", "HVM64" : "ami-db7b39e1", "HVMG2" : "ami-b3337e89"},
-      "sa-east-1"        : {"PV64" : "ami-5b098146", "HVM64" : "ami-55098148", "HVMG2" : "NOT_SUPPORTED"},
-      "cn-north-1"       : {"PV64" : "ami-bec45887", "HVM64" : "ami-bcc45885", "HVMG2" : "NOT_SUPPORTED"}
-    }
+      "t1.micro"    : { "Arch" : "64" },
+      "m1.small"    : { "Arch" : "32" },
+      "m1.large"    : { "Arch" : "64" },
+      "m1.xlarge"   : { "Arch" : "64" },
+      "m2.xlarge"   : { "Arch" : "64" },
+      "m2.2xlarge"  : { "Arch" : "64" },
+      "m2.4xlarge"  : { "Arch" : "64" },
+      "c1.medium"   : { "Arch" : "32" },
+      "c1.xlarge"   : { "Arch" : "64" }
+    },
 
-  },
-
+    "AWSRegionArch2AMI": {
+        "ap-northeast-1": { "32": "ami-3cc2743c", "64": "ami-3ec2743e" },
+        "ap-southeast-1": { "32": "ami-96e3e1c4", "64": "ami-94e3e1c6" },
+        "ap-southeast-2": { "32": "ami-37eea80d", "64": "ami-2beea811" },
+        "eu-central-1": { "32": "ami-94333689", "64": "ami-9633368b" },
+        "eu-west-1": { "32": "ami-dea5eea9", "64": "ami-daa5eead" },
+        "sa-east-1": { "32": "ami-1f199602", "64": "ami-19199604" },
+        "us-east-1": { "32": "ami-f16cb09a", "64": "ami-97d717d3" },
+        "us-west-1": { "32": "ami-f7d717b3", "64": "ami-fdd717b9" },
+        "us-west-2": { "32": "ami-dd3935ed", "64": "ami-3f353a0f" }
+        }
+},
   "Resources" : {     
       
     "RexrayInstance": {  
@@ -119,9 +80,10 @@
 
           "Install" : {
             "packages" : {
-              "yum" : {
+              "apt" : {
                 "wget"    : [],
-                "curl"    : []
+                "curl"    : [],
+                "heat-cfntools" : []
               }
             },
 
@@ -131,9 +93,9 @@
                   "[cfn-auto-reloader-hook]\n",
                   "triggers=post.update\n",
                   "path=Resources.WebServerInstance.Metadata.AWS::CloudFormation::Init\n",
-                  "action=/opt/aws/bin/cfn-init -v ",
+                  "action=/usr/local/bin/cfn-init -v ",
                   "         --stack ", { "Ref" : "AWS::StackName" },
-                  "         --resource WebServerInstance ",
+                  "         --resource RexrayInstance ",
                   "         --configsets InstallAndRun ",
                   "         --region ", { "Ref" : "AWS::Region" }, "\n",
                   "runas=root\n"
@@ -173,27 +135,27 @@
         "KeyName"        : { "Ref" : "KeyName" },
         "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
              "#!/bin/bash -xe\n",
-             "yum update -y aws-cfn-bootstrap\n",
-
-             "# Install the files and packages from the metadata\n",
-             "/opt/aws/bin/cfn-init -v ",
-             "         --stack ", { "Ref" : "AWS::StackName" },
-             "         --resource RexrayInstance ",
-             "         --configsets InstallAndRun ",
-             "         --region ", { "Ref" : "AWS::Region" }, "\n",
+             "apt-get update\n",
+             "apt-get -y install python-setuptools\n",
+             "easy_install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz\n",
+             "ln -s /usr/local/lib/python2.7/dist-packages/aws_cfn_bootstrap-1.4-py2.7.egg/init/ubuntu/cfn-hup /etc/init.d/cfn-hup\n",
+             "chmod +x /etc/init.d/cfn-hup\n",
+             "update-rc.d cfn-hup defaults\n ",
+             "service cfn-hup start\n",
+             "/usr/local/bin/cfn-init --stack ",{ "Ref":"AWS::StackName" }," --resource RexrayInstance "," --configsets InstallAndRun --region ",{"Ref":"AWS::Region"},"\n",
 
              "# Install the latest Docker..\n",
-             "/usr/bin/curl -o /tmp/install-docker.sh https://get.docker.com/\n",
+             "/usr/bin/curl -o /tmp/install-docker.sh https://experimental.docker.com/\n",
              "chmod +x /tmp/install-docker.sh\n",
              "/tmp/install-docker.sh\n",
 
-             "# add the ec2-user user to the docker group..\n",
-             "/usr/sbin/usermod -G docker ec2-user\n",
+             "# add the ubuntu user to the docker group..\n",
+             "/usr/sbin/usermod -G docker ubuntu\n",
 
-             "# Install REX-ray\n",
+             "# Install the latest REX-ray\n",
              "/usr/bin/curl -ssL -o /tmp/install-rexray.sh https://dl.bintray.com/emccode/rexray/install\n",
              "chmod +x /tmp/install-rexray.sh\n",
-             "/tmp/install-rexray.sh\n",
+             "/tmp/install-rexray.sh unstable\n",
              "chgrp docker /etc/rexray/config.yml\n",
              "reboot\n"
         ]]}}        
