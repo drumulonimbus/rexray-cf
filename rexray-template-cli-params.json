@@ -57,15 +57,15 @@
     },
 
     "AWSRegionArch2AMI": {
-        "ap-northeast-1": { "32": "ami-3cc2743c", "64": "ami-3ec2743e" },
-        "ap-southeast-1": { "32": "ami-96e3e1c4", "64": "ami-94e3e1c6" },
-        "ap-southeast-2": { "32": "ami-37eea80d", "64": "ami-2beea811" },
-        "eu-central-1": { "32": "ami-94333689", "64": "ami-9633368b" },
-        "eu-west-1": { "32": "ami-dea5eea9", "64": "ami-daa5eead" },
-        "sa-east-1": { "32": "ami-1f199602", "64": "ami-19199604" },
-        "us-east-1": { "32": "ami-f16cb09a", "64": "ami-97d717d3" },
-        "us-west-1": { "32": "ami-f7d717b3", "64": "ami-fdd717b9" },
-        "us-west-2": { "32": "ami-dd3935ed", "64": "ami-3f353a0f" }
+        "ap-northeast-1": { "32": "ami-262e4c26", "64": "ami-2a2e4c2a" },
+        "ap-southeast-1": { "32": "ami-a81003fa", "64": "ami-ae1003fc" },
+        "ap-southeast-2": { "32": "ami-796c2643", "64": "ami-7f6c2645" },
+        "eu-central-1": { "32": "ami-54272b49", "64": "ami-56272b4b" },
+        "eu-west-1": { "32": "ami-6d360a1a", "64": "ami-57360a20" },
+        "sa-east-1": { "32": "ami-ed48d9f0", "64": "ami-ef48d9f2" },
+        "us-east-1": { "32": "ami-35025050", "64": "ami-3f02505a" },
+        "us-west-1": { "32": "ami-098a494d", "64": "ami-0b8a494f" },
+        "us-west-2": { "32": "ami-90e605a3", "64": "ami-96e605a5" }
         }
 },
   "Resources" : {     
