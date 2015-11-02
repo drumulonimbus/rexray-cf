@@ -145,7 +145,7 @@
              "/usr/local/bin/cfn-init --stack ",{ "Ref":"AWS::StackName" }," --resource RexrayInstance "," --configsets InstallAndRun --region ",{"Ref":"AWS::Region"},"\n",
 
              "# Install the latest Docker..\n",
-             "/usr/bin/curl -o /tmp/install-docker.sh https://experimental.docker.com/\n",
+             "/usr/bin/curl -o /tmp/install-docker.sh https://get.docker.com/\n",
              "chmod +x /tmp/install-docker.sh\n",
              "/tmp/install-docker.sh\n",
 
@@ -155,7 +155,7 @@
              "# Install the latest REX-ray\n",
              "/usr/bin/curl -ssL -o /tmp/install-rexray.sh https://dl.bintray.com/emccode/rexray/install\n",
              "chmod +x /tmp/install-rexray.sh\n",
-             "/tmp/install-rexray.sh unstable\n",
+             "/tmp/install-rexray.sh\n",
              "chgrp docker /etc/rexray/config.yml\n",
              "reboot\n"
         ]]}}        
